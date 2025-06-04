@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books JSON Display</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Books Collection</h1>
+    <div id="book-info">
+        <p>Check the console for book details!</p>
+    </div>
+
+    <script>
+        // Load and parse JSON data
+        const booksData = {
+            "books": [
+                {
+                    "id": 1,
+                    "title": "The Great Gatsby",
+                    "author": "F. Scott Fitzgerald",
+                    "publicationYear": 1925,
+                    "genres": ["Fiction", "Classics"]
+                },
+                {
+                    "id": 2,
+                    "title": "To Kill a Mockingbird",
+                    "author": "Harper Lee",
+                    "publicationYear": 1960,
+                    "genres": ["Fiction", "Coming-of-Age"]
+                }
+            ]
+        };
+
+        // Display all book details in console
+        console.log("=== Book Collection Details ===");
+        
+        // Display all details for both books
+        booksData.books.forEach((book, index) => {
+            console.log(`\n--- Book ${index + 1} Details ---`);
+            console.log("Title:", book.title);
+            console.log("Author:", book.author);
+            console.log("Publication Year:", book.publicationYear);
+            console.log("Genres:", book.genres.join(", "));
+        });
+        
+    </script>
+</body>
+</html>
